@@ -16,8 +16,8 @@ let userSchema = new Schema({
     type: String,
     trim: true,
   },
-  hosted: [{ type: ObjectId, ref: "Session" }],
-  participated: [{ type: ObjectId, ref: "Session" }],
+  hosted: [{ type: mongoose.Types.ObjectId, ref: "Session" }],
+  participated: [{ type: mongoose.Types.ObjectId, ref: "Session" }],
 });
 
-exports.User = mongoose.model("User", userSchema);
+module.exports = mongoose.model("User", userSchema);
