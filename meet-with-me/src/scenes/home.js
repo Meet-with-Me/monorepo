@@ -1,7 +1,9 @@
-import { useHistory } from "react-router-dom";
+import { useHistory } from 'react-router-dom';
+import { useProfileContext } from '../contexts/profile-context';
 
 export default function Home() {
   const history = useHistory();
+  const profile = useProfileContext();
 
   function handleClickAbout() {
     history.push('/about');
@@ -17,12 +19,12 @@ export default function Home() {
         <h2>Home</h2>
       </div>
       <div>
-        <button type='button' onClick={handleClickAbout}>
-          About
+        <button type="button" onClick={handleClickAbout}>
+          About me: {profile.name}
         </button>
       </div>
       <div>
-        <button type='button' onClick={handleClickDashboard}>
+        <button type="button" onClick={handleClickDashboard}>
           Dashboard
         </button>
       </div>
