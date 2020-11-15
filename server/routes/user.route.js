@@ -1,13 +1,13 @@
-const express = require("express");
+const express = require('express');
 const userRouter = express.Router();
 
-let User = require("../models/user.model");
+let User = require('../models/user.model');
 
-userRouter.post("/login", async (req, res, next) => {
+userRouter.post('/login', async (req, res, next) => {
   try {
     const googleId = req.body.googleId;
     const email = req.body.email;
-    const fullName = req.body.fullName;
+    const fullName = req.body.name;
 
     const exists = await User.exists({ email: email });
 
@@ -18,12 +18,10 @@ userRouter.post("/login", async (req, res, next) => {
         full_name: fullName,
       });
 
-      console.log(doc);
-
       const saved = doc.save();
-      res.send("User created");
+      return res.json({ message: 'User created' });
     } else {
-      res.send("User already exists");
+      return res.json({ message: 'User already exists' });
     }
   } catch (error) {
     console.error(error);
