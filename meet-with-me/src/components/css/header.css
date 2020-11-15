@@ -1,0 +1,19 @@
+nav.navbar {
+  background: #615756;
+  margin-bottom: 40px;
+}
+nav.navbar img {
+  margin-right: 16px;
+}
+nav.navbar .navbar-brand {
+  font-family: 'Sulphur Point', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+nav.navbar div.navbar-nav button {
+  background: #42bd9c;
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+}
