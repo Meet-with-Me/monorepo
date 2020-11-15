@@ -1,10 +1,9 @@
 import { useGoogleLogin } from 'react-google-login';
 import refreshGoogleToken from '../utils/refresh-google-token';
-import serverCalls from '../server';
+import { postLogin } from '../server';
 
 const clientId =
   '877322371128-l9veif124rl10eirk6fc4godt9t9nssd.apps.googleusercontent.com';
-const server = serverCalls();
 
 export default function useLogin(setIsSignedIn) {
   const onSuccess = async (response) => {
@@ -12,7 +11,7 @@ export default function useLogin(setIsSignedIn) {
     refreshGoogleToken(response);
     setIsSignedIn(true);
 
-    const postLoginResult = await server.postLogin(response.profileObj);
+    const postLoginResult = await postLogin(response.profileObj);
     console.log(postLoginResult);
   };
 
