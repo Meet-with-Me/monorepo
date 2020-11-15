@@ -1,6 +1,14 @@
-import SessionCard from "../components/SessionCard";
+import { useHistory } from "react-router-dom";
+
+import SessionCard from "../components/session-card";
 
 export default function Dashboard() {
+  const history = useHistory();
+
+  const handleClickAvailability = (sessionId) => {
+    history.push(`/session?sessionId=${sessionId}`);
+  };
+
   return (
     <div class="container">
       <h2>Dashboard</h2>
@@ -9,15 +17,15 @@ export default function Dashboard() {
           <h3 class="text-muted">Hosting</h3>
           <SessionCard
             sessionTitle="Spikeball Tourney"
-            host="Patrick Hubbell"
             startDate="11/20/2020"
             endDate="11/27/2020"
+            handleClickAvailability={handleClickAvailability}
           />
           <SessionCard
             sessionTitle="Hot Dog Eating Contest"
-            host="Patrick Hubbell"
             startDate="11/20/2020"
             endDate="11/27/2020"
+            handleClickAvailability={handleClickAvailability}
           />
         </div>
         <div class="sessions-column">
@@ -27,18 +35,21 @@ export default function Dashboard() {
             host="Patrick Hubbell"
             startDate="11/20/2020"
             endDate="11/27/2020"
+            handleClickAvailability={handleClickAvailability}
           />
           <SessionCard
             sessionTitle="Nerf and Nuggs"
             host="Patrick Hubbell"
             startDate="11/20/2020"
             endDate="11/27/2020"
+            handleClickAvailability={handleClickAvailability}
           />
           <SessionCard
             sessionTitle="Movie Night"
             host="Patrick Hubbell"
             startDate="11/20/2020"
             endDate="11/27/2020"
+            handleClickAvailability={handleClickAvailability}
           />
         </div>
       </div>
