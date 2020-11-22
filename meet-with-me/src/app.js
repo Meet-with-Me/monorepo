@@ -17,7 +17,7 @@ export default function Router() {
   const { googleSignOut } = useLogout(setIsSignedIn);
 
   return (
-    <div>
+    <>
       <Header googleSignOut={googleSignOut} isSignedIn={isSignedIn} />
 
       <Switch>
@@ -37,6 +37,6 @@ export default function Router() {
           <Oops />
         </Route>
       </Switch>
-    </div>
+    </>
   );
 }

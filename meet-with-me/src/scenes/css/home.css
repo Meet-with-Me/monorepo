@@ -1,39 +1,44 @@
 #home-container {
-  color: #fff;
-  font-family: 'Roboto', sans-serif;
-  font-size: 40px;
+  background: #4527a0;
+  min-height: calc(100vh - 62px);
+  padding-top: 10%;
   padding-bottom: 40px;
 }
-#home-container div.home-content {
-  align-items: center;
-  background: #826aed;
-  border-radius: 25px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  min-height: 400px;
-  padding: 20px;
-  width: 100%;
+#home-container div.container,
+#home-container div.row {
+  height: 100%;
 }
-#home-container p {
-  font-weight: 500;
-  text-align: center;
+
+#home-container div.text-content {
+  font-family: 'Roboto', sans-serif;
 }
-#home-container p span {
+
+#home-container div.text-content h1 {
   color: #42bd9c;
 }
-#home-container div.home-content div {
+
+#home-container div.text-content h4 {
+  color: #fff;
+}
+
+#home-container div.text-content h4 span {
+  color: #42bd9c;
+}
+
+#home-container div.text-content h4,
+#home-container div.text-content button {
+  margin-bottom: 50px;
+}
+
+#home-container button {
   align-items: center;
   display: flex;
-  font-size: 30px;
-  justify-content: space-evenly;
-  width: 100%;
-}
-#home-container div.home-content button {
-  background: #fff;
+  color: #fff;
+  background: #42bd9c;
   font-weight: 700;
-  min-height: 50px;
 }
-#home-container div.home-content button img {
-  margin-right: 10px;
+
+#home-container button .icon {
+  font-size: 30px;
+  margin-right: 12px;
 }
