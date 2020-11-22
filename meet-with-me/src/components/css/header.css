@@ -1,5 +1,6 @@
 nav.navbar {
   background: #4527a0;
+  color: #fff;
 }
 nav.navbar img {
   margin-right: 16px;
@@ -10,9 +11,17 @@ nav.navbar .navbar-brand {
   font-weight: 700;
 }
 
-nav.navbar div.navbar-nav button {
+#large-screen-options button {
   background: #42bd9c;
-  color: #fff;
+  color: inherit;
   font-family: 'Roboto', sans-serif;
   font-weight: 700;
+}
+
+#small-screen-options button {
+  background: #4527a0;
+  color: inherit;
+}
+#small-screen-options div.dropdown-menu {
+  position: absolute;
 }
