@@ -12,13 +12,17 @@ export default function Home({ googleSignIn }) {
     <div id="home-container">
       <div className="container">
         <div className="row justify-content-md-center justify-content-sm-center justify-content-center">
-          <div className="col-12 col-sm-12 col-md-12 col-lg-7 text-content">
+          <div className="col-12 col-sm-12 col-md-12 col-lg-7 text-center text-lg-left text-content">
             <h1>Event planning made simple</h1>
             <h4>
               Want to pick a date and time but don't know everyone's
               availability? Send them a <span>Meet with Me</span>!
             </h4>
-            <button className="btn" type="button" onClick={googleSignIn}>
+            <button
+              className="btn mx-auto mx-lg-0"
+              type="button"
+              onClick={googleSignIn}
+            >
               <FontAwesomeIcon className="icon" icon={faGoogle} />
               Sign in with Google
             </button>
