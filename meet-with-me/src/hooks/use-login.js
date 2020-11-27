@@ -1,11 +1,14 @@
 import { useGoogleLogin } from 'react-google-login';
 import refreshGoogleToken from '../utils/refresh-google-token';
+import { useHistory } from 'react-router-dom';
 import { postLogin } from '../server';
 
 const clientId =
   '877322371128-l9veif124rl10eirk6fc4godt9t9nssd.apps.googleusercontent.com';
 
 export default function useLogin(setIsSignedIn) {
+  const history = useHistory();
+
   const onSuccess = async (response) => {
     console.log('Login success... Response:', response);
     refreshGoogleToken(response);
@@ -13,6 +16,8 @@ export default function useLogin(setIsSignedIn) {
 
     const postLoginResult = await postLogin(response.profileObj);
     console.log(postLoginResult);
+
+    history.push('/dashboard');
   };
 
   const onFailure = (response) => {
